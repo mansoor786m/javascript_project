@@ -11,7 +11,7 @@
     <div class="main">
         <div class="overlay">
             <div class="title">We are comming Now</div>
-            <div class="title">05 May 2023 11:59 PM</div>
+            <div class="title" id="end-date">18 May 2023 11:59 PM</div>
             <div class="col">
                 <div>
                     <input type="text" readonly value="0"><br>
@@ -32,6 +32,14 @@
             </div>
         </div>
     </div>
-    
+    <script src="app.js">
+        clock()
+        setInterval(
+            () => {
+                clock()
+            },
+            1000
+            )
+    </script>
 </body>
 </html>
