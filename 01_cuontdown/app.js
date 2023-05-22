@@ -1,4 +1,4 @@
-const endDate = "18 May 2023 09:30:00 PM"
+const endDate = "24 May 2023 09:30:00 PM"
 
 document.getElementById("end-date").innerText = endDate;
 const inputs = document.querySelectorAll("input")
@@ -22,7 +22,12 @@ function clock() {
 }
 
 // initial call
-
+clock();
+setInterval( function (){
+    clock()
+    } ,
+     1000
+)
 
 /**
  *  1 day = 24 hrs
