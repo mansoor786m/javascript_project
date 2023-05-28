@@ -94,7 +94,7 @@ const reset = () => {
 
 const endQuiz = () => {
 
-    document.getElementsById("box").innerHTML = `hellow`
+    document.getElementById("box").innerHTML = `your correct answer is ${correct} out of ${total}`
 }
 
 loadQuestion();
