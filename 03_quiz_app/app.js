@@ -33,20 +33,20 @@ const quizData = [{
 }
 ];
 
-let index = 0,
-    correct = 0,
-    incorrect = 0,
-    total = quizData.length;
+let index = 0;
+let total = quizData.length;
+let correct = 0;
+let incorrect = 0;
 let questionBox = document.getElementById("questionBox");
-let allInputs = document.querySelectorAll("input[type='radio']")
+let allInputs = document.querySelectorAll(".option")
 
 
 const loadQuestion = () => {
-    if (total == index) {
+    if (total === index) {
         return endQuiz()
     }
 
-    reset();
+    reset()
     const data = quizData[index]
     questionBox.innerHTML = `(${index + 1}) ${data.question}`
     allInputs[0].nextElementSibling.innerText = data.a;
@@ -65,6 +65,9 @@ const submit = () => {
     }
     index++;
     loadQuestion();
+
+    console.log(correct , incorrect)
+    return;
 }
 
 
@@ -91,10 +94,11 @@ const reset = () => {
 
 const endQuiz = () => {
 
-    document.getElementsById("box").innerText = "hellow world "
+    document.getElementsById("box").innerHTML = `hellow`
 }
+
 loadQuestion();
 
-// {/* <h2 > Hii, you've scored ${correct} / ${total} </h2> */}
+
 
 
