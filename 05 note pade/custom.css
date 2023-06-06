@@ -9,7 +9,7 @@
 
 
 body{
-    background-color: #686de0;
+    background-color: #f49b9b;
 }
 
 #main{
@@ -48,6 +48,7 @@ body{
 }
 
 textarea{
+    padding: 10px;
     width: 100%;
     height: 100%;
     border: none;
