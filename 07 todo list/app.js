@@ -1,91 +1,123 @@
-const addBtn = document.querySelector("#addBtn");
-const main = document.querySelector("#main")
+const item = document.querySelector("#item");
+const toDoBox = document.querySelector("#to-do-box")
+const save = document.querySelector("#btn")
 
-addBtn.addEventListener(
-    "click",
-    function () {
-        addNote()
+item.addEventListener(
+    "keyup",
+    function (event) {
+        if(event.key== "Enter"){
+            x=this.value
+            console.log(x)
+            addToDo(x)
+            this.value = ""
+        }
     }
 )
 
+const addToDo = (item) => {
+    const listItem = document.createElement("li")
+    listItem.innerHTML = `
+    ${item}
+    <i class="fas fa-times"></i>
+    `
 
-const saveNotes = () => {
-    const notes = document.querySelectorAll(".note textarea");
-    console.log(notes);
+    listItem.querySelector("i").addEventListener(
+        "click",
+        function () {
+            listItem.remove()
+            // saveList()
+        }
+    )
+
+    listItem.addEventListener(
+        "click",
+        function() {
+            this.classList.toggle("done");
+            saveList()
+        }
+    )
+
+    save.addEventListener(
+        "click",
+        function () {
+        saveList()
+            
+        }
+    )
+
+    toDoBox.appendChild(listItem);
+    saveList();
+}
+
+
+const saveList = () => {
+    const list = document.querySelector("#to-do-box ");
+    console.log(list);
+    const listItem = document.createElement("li")
     const data = [];
-    notes.forEach(
-            (note) => {
-                data.push(note.value)
+    listItem.forEach(
+            (list) => {
+                data.push(list.value)
             }
         )
-        // console.log(data)
+        console.log(data)
     if (data.length === 0) {
-        localStorage.removeItem("notes")
+        localStorage.removeItem("list")
     } else {
-        localStorage.setItem("notes", JSON.stringify(data))
+        localStorage.setItem("list", JSON.stringify(data))
     }
 }
 
 
 
-// <!-- <div class="note">
-// <div class="tool">
-//     <i class="fa-solid fa-floppy-disk"></i>
-//     <i class="fa-solid fa-trash"></i>
-
-// </div>
-// <textarea></textarea>
-// </div>
-
-const addNote = () => {
-    const note = document.createElement("div")
-    note.classList.add("note")
-    note.innerHTML = `
-    <div class="tool">
-        <i class=" save fa-solid fa-floppy-disk"></i>
-        <i class=" trash fa-solid fa-trash"></i>
-
-    </div>
-    <textarea></textarea>
-    `
-    note.querySelector(".trash").addEventListener(
-        "click",
-        function () {
-            note.remove()
-            saveNotes()
-        }
-    )
-    note.querySelector(".save").addEventListener(
-        "click",
-        function () {
-            saveNotes()
-        }
-    )
-    note.querySelector("textarea").addEventListener(
-        "focusout",
-        function () {
-            saveNotes()
-        }
-    )
 
 
-    main.appendChild(note);
-    saveNotes();
-}
 
 
-(
-    function() {
-        const lsNotes = JSON.parse(localStorage.getItem("notes"));
-        if (lsNotes === null) {
-            addNote()
-        } else {
-            lsNotes.forEach(
-                (lsNote) => {
-                    addNote(lsNote)
-                }
-            )
-        }
 
-    }
-)() ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// (
+//     function() {
+//         const lsNotes = JSON.parse(localStorage.getItem("notes"));
+//         if (lsNotes === null) {
+//             addNote()
+//         } else {
+//             lsNotes.forEach(
+//                 (lsNote) => {
+//                     addNote(lsNote)
+//                 }
+//             )
+//         }
+
+//     }
+// )() ;
