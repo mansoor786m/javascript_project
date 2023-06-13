@@ -18,12 +18,12 @@ const saveNotes = () => {
                 data.push(note.value)
             }
         )
-        // console.log(data)
-    if (data.length === 0) {
-        localStorage.removeItem("notes")
-    } else {
-        localStorage.setItem("notes", JSON.stringify(data))
-    }
+        console.log(data)
+    // if (data.length === 0) {
+    //     localStorage.removeItem("notes")
+    // } else {
+    //     localStorage.setItem("notes", JSON.stringify(data))
+    // }
 }
 
 
@@ -37,7 +37,7 @@ const saveNotes = () => {
 // <textarea></textarea>
 // </div>
 
-const addNote = () => {
+const addNote = (text="") => {
     const note = document.createElement("div")
     note.classList.add("note")
     note.innerHTML = `
@@ -46,7 +46,7 @@ const addNote = () => {
         <i class=" trash fa-solid fa-trash"></i>
 
     </div>
-    <textarea></textarea>
+    <textarea>${text}</textarea>
     `
     note.querySelector(".trash").addEventListener(
         "click",

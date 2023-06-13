@@ -51,21 +51,22 @@ const addToDo = (item) => {
 
 
 const saveList = () => {
-    const list = document.querySelector("#to-do-box ");
-    console.log(list);
-    const listItem = document.createElement("li")
-    const data = [];
-    listItem.forEach(
-            (list) => {
-                data.push(list.value)
-            }
-        )
-        console.log(data)
-    if (data.length === 0) {
-        localStorage.removeItem("list")
-    } else {
-        localStorage.setItem("list", JSON.stringify(data))
-    }
+    alert("not saved")
+    // const list = document.querySelector("#to-do-box li ");
+    // console.log(list);
+    // const listItem = document.createElement("li")
+    // const data = [];
+    // list.forEach(
+    //         (list) => {
+    //             data.push(list.value)
+    //         }
+    //     )
+    //     console.log(data)
+    // if (data.length === 0) {
+    //     localStorage.removeItem("list")
+    // } else {
+    //     localStorage.setItem("list", JSON.stringify(data))
+    // }
 }
 
 
