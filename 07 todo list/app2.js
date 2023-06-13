@@ -6,7 +6,7 @@ item.addEventListener(
     "keyup",
     function (event) {
         if (event.key == "Enter") {
-            x = this.value
+            const x = this.value
             // console.log(x)
             addToDo(x)
             this.value = ""
@@ -21,7 +21,7 @@ const saveList = () => {
     todolist.forEach(
         (note) => {
             // console.log(note)
-            data.push(note.nodeValue)
+            data.push(note.Value);
         }
 
     )
@@ -46,7 +46,7 @@ const addToDo = (item) => {
         "click",
         function () {
             listItem.remove()
-            // saveList()
+            saveList()
         }
     )
 
@@ -54,17 +54,17 @@ const addToDo = (item) => {
         "click",
         function () {
             this.classList.toggle("done");
-            // saveList()
+            saveList()
         }
     )
 
-    // save.addEventListener(
-    //     "click",
-    //     function () {
-    //     saveList()
+    save.addEventListener(
+        "click",
+        function () {
+        saveList()
 
-    //     }
-    // )
+        }
+    )
 
     toDoBox.appendChild(listItem);
     saveList();
