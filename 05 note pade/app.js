@@ -14,11 +14,11 @@ const saveNotes = () => {
     console.log(notes);
     const data = [];
     notes.forEach(
-            (note) => {
-                data.push(note.value)
-            }
-        )
-        console.log(data)
+        (note) => {
+            data.push(note.value)
+        }
+    )
+    console.log(data)
     if (data.length === 0) {
         localStorage.removeItem("notes")
     } else {
@@ -37,7 +37,7 @@ const saveNotes = () => {
 // <textarea></textarea>
 // </div>
 
-const addNote = (text="") => {
+const addNote = (text = "") => {
     const note = document.createElement("div")
     note.classList.add("note")
     note.innerHTML = `
@@ -74,18 +74,18 @@ const addNote = (text="") => {
 }
 
 
-(
-    function() {
-        const lsNotes = JSON.parse(localStorage.getItem("notes"));
-        if (lsNotes === null) {
-            addNote()
-        } else {
-            lsNotes.forEach(
-                (lsNote) => {
-                    addNote(lsNote)
-                }
-            )
-        }
 
+const start = () => {
+    const lsNotes = JSON.parse(localStorage.getItem("notes"));
+    if (lsNotes === null) {
+        addNote()
+    } else {
+        lsNotes.forEach(
+            (lsNote) => {
+                addNote(lsNote)
+            }
+        )
     }
-)() ;
+
+}
+start();

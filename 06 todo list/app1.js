@@ -16,16 +16,16 @@ item.addEventListener(
 
 const saveList = () => {
     const todolist = document.querySelectorAll("#to-do-box li");
-    console.log(todolist);
+    // console.log(todolist);
     const data = [];
     todolist.forEach(
         (note) => {
-            // console.log(note)
-            data.push(note.Value);
+            console.log(note.innerText)
+            data.push(note.innerText);
         }
 
     )
-    console.log(data)           
+    // console.log(data)           
         if (data.length === 0) {
             localStorage.removeItem("todolist")
         } else {
@@ -69,3 +69,21 @@ const addToDo = (item) => {
     toDoBox.appendChild(listItem);
     saveList();
 }
+
+const start= ()=>{
+    let data = JSON.parse(localStorage.getItem("todolist"))
+    console.log(data)
+    if(data.length == 0){ addToDo()}
+    else{
+        for(let i=0; i<data.length ; i++){
+            addToDo(data[i])
+        }
+    }
+
+
+
+
+
+}
+
+start();
