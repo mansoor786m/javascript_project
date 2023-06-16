@@ -5,14 +5,35 @@ const save = document.querySelector("#btn")
 item.addEventListener(
     "keyup",
     function (event) {
-        if(event.key== "Enter"){
-            x=this.value
-            console.log(x)
+        if (event.key == "Enter") {
+            const x = this.value
+            // console.log(x)
             addToDo(x)
             this.value = ""
         }
     }
 )
+
+const saveList = () => {
+    const todolist = document.querySelectorAll("#to-do-box li");
+    // console.log(todolist);
+    const data = [];
+    todolist.forEach(
+        (note) => {
+            console.log(note.innerText)
+            data.push(note.innerText);
+        }
+
+    )
+    // console.log(data)           
+        if (data.length === 0) {
+            localStorage.removeItem("todolist")
+        } else {
+            localStorage.setItem("todolist", JSON.stringify(data))
+        }
+
+}
+
 
 const addToDo = (item) => {
     const listItem = document.createElement("li")
@@ -25,13 +46,13 @@ const addToDo = (item) => {
         "click",
         function () {
             listItem.remove()
-            // saveList()
+            saveList()
         }
     )
 
     listItem.addEventListener(
         "click",
-        function() {
+        function () {
             this.classList.toggle("done");
             saveList()
         }
@@ -41,7 +62,7 @@ const addToDo = (item) => {
         "click",
         function () {
         saveList()
-            
+
         }
     )
 
@@ -49,76 +70,20 @@ const addToDo = (item) => {
     saveList();
 }
 
+const start= ()=>{
+    let data = JSON.parse(localStorage.getItem("todolist"))
+    console.log(data)
+    if(data.length == 0){ addToDo()}
+    else{
+        for(let i=0; i<data.length ; i++){
+            addToDo(data[i])
+        }
+    }
 
-const saveList = () => {
-    alert("not saved")
-    // const list = document.querySelector("#to-do-box li ");
-    // console.log(list);
-    // const listItem = document.createElement("li")
-    // const data = [];
-    // list.forEach(
-    //         (list) => {
-    //             data.push(list.value)
-    //         }
-    //     )
-    //     console.log(data)
-    // if (data.length === 0) {
-    //     localStorage.removeItem("list")
-    // } else {
-    //     localStorage.setItem("list", JSON.stringify(data))
-    // }
+
+
+
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// (
-//     function() {
-//         const lsNotes = JSON.parse(localStorage.getItem("notes"));
-//         if (lsNotes === null) {
-//             addNote()
-//         } else {
-//             lsNotes.forEach(
-//                 (lsNote) => {
-//                     addNote(lsNote)
-//                 }
-//             )
-//         }
-
-//     }
-// )() ;
+start();

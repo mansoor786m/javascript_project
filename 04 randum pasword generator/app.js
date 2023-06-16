@@ -12,6 +12,25 @@ const lowerInput = document.getElementById("lower-case")
 const numberInput = document.getElementById("numbers")
 const symbolInput = document.getElementById("symbols")
 
+const arr=[upperSet , lowerSet, numberSet, symbolSet ]
+
+const shuff = (arr) => {
+    let array = arr.split("");
+    console.log(array)
+    let j, tem;
+    for (let i = array.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i));
+        tem = array[i];
+        array[i] = array[j];
+        array[j] = tem;
+
+    }
+    return array.join("");
+}
+
+
+
+
 
 const getRandomData = (dataSet) => {
     return dataSet[Math.floor(Math.random() * dataSet.length)]
@@ -35,7 +54,10 @@ const generatePassword = (password = "") => {
         return generatePassword(password)
     }
 
-    passBox.innerText = truncateString(password, totalChar.value);
+   
+    
+    let passString= truncateString(password, totalChar.value);
+    passBox.innerText = shuff(passString);
 }
 
 
@@ -43,7 +65,7 @@ generatePassword();
 
 document.getElementById("btn").addEventListener(
     "click",
-    function() {
+    function () {
         generatePassword();
     }
 
