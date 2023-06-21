@@ -1,76 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random pasword</title>
-    <link rel="stylesheet" href="custom.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calculate me! - A calculator made my me</title>
+  <link href="custom.css" rel="stylesheet" type="text/css" />
+  <link href="utility.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <div class="main">
-        <div class="box">
-            <span id="pass-box">Testing</span>
-            <div class="row">
-                <div class="left">
-                    Passowerd Length
-                </div>
-                <div class="right">
-                    <input type="number" name="" id="total-char" max="30" min="2" value="10">
-
-                </div>
-            </div>
-            <div class="row">
-                <label for="upper-case">
-                    <div class="left">
-                       Contains Uppercase
-                    </div>
-                </label>
-                <div class="right">
-                    <input type="checkbox" name="" id="upper-case" checked>
-
-                </div>
-            </div>
-            <div class="row">
-                <label for="lower-case">
-                    <div class="left">
-                       Contains Lowercase
-                    </div>
-                </label>
-                <div class="right">
-                    <input type="checkbox" name="" id="lower-case" checked>
-
-                </div>
-            </div>
-            <div class="row">
-                <label for="numbers">
-                    <div class="left">
-                       Contains Uppercase
-                    </div>
-                </label>
-                <div class="right">
-                    <input type="checkbox" name="" id="numbers" checked>
-
-                </div>
-            </div>
-            <div class="row">
-                <label for="symbols">
-                    <div class="left">
-                       Contains Uppercase
-                    </div>
-                </label>
-                <div class="right">
-                    <input type="checkbox" name="" id="symbols" checked>
-
-                </div>
-            </div>
-            <div class="row">
-                <button id="btn" >Generate</button>
-            </div>
-        </div>
+  <h1 class="text-center">Welcome to Calculate me!</h1>
+  <div class="container flex flex-col items-center mx-auto m-w-20">
+    <div class="row">
+      <input class="input" type="text"/>
     </div>
-    
-
-    <script src="app.js"></script>
+    <div class="row">
+      <button class="button">C</button>
+      <button class="button">%</button>
+      <button class="button">M+</button>
+      <button class="button">M-</button>
+    </div>
+    <div class="row">
+      <button class="button">7</button>
+      <button class="button">8</button>
+      <button class="button">9</button>
+      <button class="button">*</button>
+    </div>
+    <div class="row">
+      <button class="button">4</button>
+      <button class="button">5</button>
+      <button class="button">6</button>
+      <button class="button">/</button>
+    </div>
+    <div class="row">
+      <button class="button">1</button>
+      <button class="button">2</button>
+      <button class="button">3</button>
+      <button class="button">+</button>
+    </div>
+    <div class="row">
+      <button class="button">0</button>
+      <button class="button">.</button>
+      <button class="button">=</button>
+      <button class="button">-</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
