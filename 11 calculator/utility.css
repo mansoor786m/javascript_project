@@ -3,7 +3,8 @@
   }
   
   .bg-red{
-    background: red;
+    background: rgb(131, 126, 126);
+    color: white;
   }
   
   .mx-auto{

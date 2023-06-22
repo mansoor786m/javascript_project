@@ -13,13 +13,14 @@
   <h1 class="text-center">Welcome to Calculate me!</h1>
   <div class="container flex flex-col items-center mx-auto m-w-20">
     <div class="row">
-      <input class="input" type="text"/>
+      <input class="input" type="text" id="screen" placeholder="0."/>
     </div>
     <div class="row">
-      <button class="button">C</button>
+      
       <button class="button">%</button>
       <button class="button">M+</button>
       <button class="button">M-</button>
+      <button class="button">/</button>
     </div>
     <div class="row">
       <button class="button">7</button>
@@ -31,7 +32,7 @@
       <button class="button">4</button>
       <button class="button">5</button>
       <button class="button">6</button>
-      <button class="button">/</button>
+      <button class="button">-</button>
     </div>
     <div class="row">
       <button class="button">1</button>
@@ -42,11 +43,13 @@
     <div class="row">
       <button class="button">0</button>
       <button class="button">.</button>
-      <button class="button">=</button>
-      <button class="button">-</button>
+      <button class="button bg-red" id="clear">C</button>
+      <button class="button bg-red" id="equal">=</button>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
-
+ 
 </html>
+
+

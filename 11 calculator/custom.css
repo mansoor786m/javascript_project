@@ -24,5 +24,6 @@ html, body {
     padding: 10px 0px;
     border: 2px solid black;
     border-radius: 5px;
+    text-align: right;
 }
 
