@@ -53,3 +53,10 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+
+
+// start Age Calculator java script
+ var date_of_birth =  new Date("#birthday".val());
+function calculate() {
+    console.log(date_of_birth)
+}
