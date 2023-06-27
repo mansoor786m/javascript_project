@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #88abff;
+}
+
+.wrapper {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 30px;
+}
+
+.add-box,
+.note {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 250px;
+    width: 250px;
+}
+
+.add-box,
+.note,
+.icon,
+.bottom-area,
+.box-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-box,
+.note {
+    flex-direction: column;
+}
+
+.add-box .icon {
+    font-size: 40px;
+    height: 80px;
+    width: 80px;
+    border: #88abff 2px dashed;
+    border-radius: 50%;
+    color: #88abff;
+    cursor: pointer;
+}
+
+.add-box p {
+    font-size: 16px;
+    color: #88abff;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.note {
+    justify-content: space-between;
+}
+
+.note .details {
+    margin-top: 10px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.note .details h2 {
+    font-weight: 600;
+}
+
+.note .details p,
+.note .bottom-area span {
+    color: #575757;
+    font-size: 16px;
+}
+
+.note .details h2,
+p {
+    padding: 2px 10px;
+}
+
+.note .bottom-area {
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px 15px;
+    border-top: 2px solid #ccc;
+}
+
+.note .bottom-area .setting {
+    cursor: pointer;
+    position: relative;
+}
+
+.note .bottom-area .setting .menu {
+    background-color: #fff;
+    width: 110px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 25px;
+    right: -10px;
+    padding: 2px 0;
+    transform: scale(0);
+    transition: 0.2s ease-in-out;
+    transform-origin: bottom right;
+}
+
+.note .bottom-area .setting.show .menu {
+    transform: scale(1);
+}
+
+.note .bottom-area .setting .menu .abc {
+    background-color: #fff;
+    margin: 2px 0;
+    padding: 5px 20px;
+}
+
+.note .bottom-area .setting .menu .abc:hover {
+    background-color: #e8e7e7;
+    transition: 0.2s;
+}
+
+.note .bottom-area .setting .menu .abc span {
+    font-size: 16px;
+}
+
+.popup-box {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.box-container {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 400px;
+}
+
+.popup-box,
+.popup,
+.box-container {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -3;
+}
+
+.popup-box.show,
+.popup,
+.box-container {
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    pointer-events: auto;
+    z-index: 3;
+}
+
+.box-header {
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.box-heading {
+    font-size: 25px;
+}
+
+.fa-xmark {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+form {
+    padding: 10px 25px 26px;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+form input,
+textarea,
+#btn {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #575757;
+}
+
+form textarea {
+    resize: none;
+    height: 150px;
+}
+
+#btn {
+    width: 100%;
+    background-color: #88abff;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 25px;
+}
+
+#btn:hover {
+    background-color: #6b91ea;
+    transition: 0.4s;
+}
