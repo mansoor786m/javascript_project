@@ -1,0 +1,21 @@
+
+notearr.splice(e, 1)
+localStorage.setItem('LocalNoteOBJ', JSON.stringify(notearr))
+showNotes();
+}
+
+//05 function to show "delete/edit" menu
+const showMenu = (e) => {
+e.parentElement.classList.add('show')
+document.addEventListener('click', (input) => {
+    if (input.target != e) {
+        e.parentElement.classList.remove('show')
+    }
+})
+};
+
+// 04 to show notes in browser
+const showNotes = () => {
+if (notearr == null) {
+    return
+}
