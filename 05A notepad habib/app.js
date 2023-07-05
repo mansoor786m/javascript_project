@@ -35,6 +35,7 @@ const deleteNote = (e) => {
     notearr.splice(e, 1)
     localStorage.setItem('LocalNoteOBJ', JSON.stringify(notearr))
     showNotes();
+    console.log(notearr)
 }
 
 //05 function to show "delete/edit" menu
