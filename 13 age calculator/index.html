@@ -48,8 +48,9 @@
     </div>
     <div style="height: 80vh;">
 
-        <button class="tablink" onclick="openPage('Home', this, '#16a085')" >Home</button>
-        <button class="tablink" onclick="openPage('AgeCalculator', this, '#27ae60')" id="defaultOpen">Age Calculator</button>
+        <button class="tablink" onclick="openPage('Home', this, '#16a085')">Home</button>
+        <button class="tablink" onclick="openPage('AgeCalculator', this, '#27ae60')" id="defaultOpen">Age
+            Calculator</button>
         <button class="tablink" onclick="openPage('Conversion', this, '#f1c40f')">Conversion</button>
         <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
         <button class="tablink" onclick="openPage('About', this, '#95a5a6')">About</button>
@@ -58,18 +59,31 @@
             <h3>Home</h3>
             <p>Home is where the heart is..</p>
         </div>
+
+
+
         <div id="AgeCalculator" class="tabcontent ">
-            <form class="form-inline" action="/action_page.php">
-                <label >Enter Date of Birth:</label>
-                <input type="date" id="birthday"  name="birthday">
+            <div class="input-data">
+                <label>Enter Date of Birth:</label>
+                <input type="date" id="birthday" name="birthday" onchange="focus">
                 <label for="todate">Up To Date:</label>
-                <input type="date" id="todate"  name="todate">
+                <input type="date" id="todate" name="todate">
                 <label>
-                  <input type="checkbox" name="remember"> Up To Now:
+                    <input type="checkbox" name="remember"> Up To Now:
                 </label>
                 <button type="submit" id="submit" onclick="calculate()">Calculate</button>
-              </form>
+            </div>
+
+            <div class="show-data">
+
+                <p class="year">year</p>
+                <p class="month">month</p>
+                <p class="day">day</p>
+            </div>
         </div>
+
+
+
 
         <div id="Conversion" class="tabcontent">
             <h3>Conversion</h3>
