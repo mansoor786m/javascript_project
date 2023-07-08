@@ -98,6 +98,7 @@ body, html {
   border: solid red 2px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   margin: 10px;
 
  
