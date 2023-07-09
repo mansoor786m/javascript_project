@@ -65,6 +65,7 @@ function calculate() {
   const date2 = new date(finalDate)
 
   alert(datediff("day", date1, date2))
+  alert(now_date)
   // const difference = finalDate.value-dateOfBirth.value
   // console.log(difference)
 
