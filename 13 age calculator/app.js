@@ -58,14 +58,15 @@ function showSlides(n) {
 // start Age Calculator java script
 const dateOfBirth = document.getElementById("birthday")
 const finalDate = document.getElementById("todate")
-const now_date = new Date();
+let now_date = new Date();
+now_date = now_date.getFullYear() + "-" + (now_date.getMonth() + 1) + "-" + now_date.getDate()
 
 function calculate() {
   // const date1 = new Date(dateOfBirth)
   // const date2 = new Date(finalDate)
 
- console.log(dateOfBirth);
- console.log(finalDate);
+ console.log(dateOfBirth.value);
+ console.log(finalDate.value);
  console.log(now_date);
   
   // const difference = finalDate.value-dateOfBirth.value
