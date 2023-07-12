@@ -62,12 +62,12 @@ let now_date = new Date();
 now_date = now_date.getFullYear() + "-" + (now_date.getMonth() + 1) + "-" + now_date.getDate()
 
 function calculate() {
-  // const date1 = new Date(dateOfBirth)
-  // const date2 = new Date(finalDate)
+  const date1 = dateOfBirth.value
+  const date2 = finalDate.value
 
- console.log(dateOfBirth.value);
- console.log(finalDate.value);
- console.log(now_date);
+ console.log(date1);
+ console.log(date2);
+ console.log(date2 - date1);
   
   // const difference = finalDate.value-dateOfBirth.value
   // console.log(difference)
