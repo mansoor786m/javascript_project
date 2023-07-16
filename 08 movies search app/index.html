@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movies Search</title>
     <link rel="stylesheet" href="custom.css">
 </head>
-
 <body>
     <div class="main">
-        <div class="row" style="justify-content: center;">
-            <input type="search" id="search" autofocus autocomplete="off" placeholder="Search here..." />
+        <div class="row" id="row">
+            <input type="search" id="search" placeholder="search here..." autofocus >
         </div>
+
         <div class="row" id="movie-box">
+            <div class="box ">
+                <!-- <img src="/img/image-missing.png" alt=""> -->
+                <div class="overlay">
+                    <div class="title">
+                        <h2>Title</h2>
+                        <span>Rating</span>
+                    </div>
+
+                    <div class="overview">
+                        <p>Overview  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore tempore minima nisi autem blanditiis vero quasi tenetur, accusamus nam animi molestias hic unde aperiam praesentium provident aliquam laboriosam nobis tempora.</p>
+                    </div>
+                </div>
+                
+            </div>
+
 
         </div>
     </div>
-    <script src="app2.js"></script>
-</body>
 
+<script src="app.js"></script>    
+</body>
 </html>
