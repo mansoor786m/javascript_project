@@ -68,4 +68,21 @@
 
 }
 
+.box .overlay{
+    width: 100%;
+    min-height: auto;
+    max-height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    left: 0px;
+    bottom: -100;
+    border: solid 2px white;
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+    overflow: auto;
 
+
+  
+}
