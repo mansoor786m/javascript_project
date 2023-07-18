@@ -76,13 +76,40 @@
     padding: 10px;
     position: absolute;
     left: 0px;
-    bottom: -100;
+    bottom: -100%;
     border: solid 2px white;
     background-color: white;
     color: black;
-    transition: 0.5s;
+    transition: 1s;
     overflow: auto;
 
 
   
+}
+
+.box:hover .overlay{
+    bottom: 0%;
+} 
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.title h2{
+    color: #ffaf40;  
+}
+
+.title span{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffaf40;  
+}
+
+.overview{
+    font-size: 1rem;
+    color: #4b4b4b;
+
 }
