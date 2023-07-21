@@ -7,7 +7,7 @@ const SEARCHAPI =
 const movies_box = document.querySelector('#movie-box')
 const search = document.querySelector("#search")
 
-
+// 1. start application for get top 20 movies by given API
 const getMovies = async (url) => {
     const responce = await fetch(url);
     // console.log(responce);
@@ -15,12 +15,13 @@ const getMovies = async (url) => {
     showMovies(data)
 }; getMovies(APIURL);
 
+// 2. show all searched movies one by one on web page. 
 const showMovies = (data) => {
+    movies_box.innerHTML = "";
 
     data.results.forEach(
         (item) => {
             // console.log(item);
-
             const note = document.createElement("div");
             note.classList.add("box");
 
@@ -44,21 +45,18 @@ const showMovies = (data) => {
 
 
 }
+// 3. now search from user is replaced in no.2 data with new one. 
 search.addEventListener(
     "keyup",
      (e) => {
         let search = e.target.value
         // console.log( search);
         
-        if(search != ""){
-            console.log(search);
-            
+        if(search != ""){         
             getMovies(SEARCHAPI + search)
         }
-        else{
-            console.log("show movies");
-            
-            // getMovies(APIURL)
+        else{     
+            getMovies(APIURL)
         }
     }
 )
