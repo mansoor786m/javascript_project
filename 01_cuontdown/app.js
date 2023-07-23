@@ -1,8 +1,15 @@
-const endDate = "30 May 2023 09:30:00 PM"
+const endDate = document.querySelector('#launch')
+
+const launchDate = () => {
+    console.log("hy");
+
+}
+
+
 
 document.getElementById("end-date").innerText = endDate;
 const inputs = document.querySelectorAll("input")
-    // const clock = () => {
+// const clock = () => {
 
 // }
 
@@ -12,7 +19,7 @@ function clock() {
     const diff = (end - now) / 1000;
 
 
-    if (diff < 0) return ;
+    if (diff < 0) return;
 
     // convert into days;
     inputs[0].value = Math.floor(diff / 3600 / 24);
@@ -23,10 +30,10 @@ function clock() {
 
 // initial call
 clock();
-setInterval( function (){
+setInterval(function () {
     clock()
-    } ,
-     1000
+},
+    1000
 )
 
 /**
