@@ -1,19 +1,18 @@
-
+let endDate = "30 july 2023 09:30:00 PM"
 const launch = document.getElementById("launch")
-const endDate = new Date("launch")
+// const endDate = new Date("launch")
 console.log(endDate)
 
 
 
 
 document.getElementById("end-date").innerText = endDate;
-const inputs = document.querySelectorAll("input")
-    // const clock = () => {
+const inputs = document.querySelectorAll("#show")
 
-// }
 
 function clock() {
     const end = new Date(endDate)
+    console.log(end)
     const now = new Date()
     const diff = (end - now) / 1000;
 
@@ -29,11 +28,11 @@ function clock() {
 
 // initial call
 clock();
-// setInterval( function (){
-//     clock()
-//     } ,
-//      1000
-// )
+setInterval( function (){
+    clock()
+    } ,
+     1000
+)
 
 /**
  *  1 day = 24 hrs
